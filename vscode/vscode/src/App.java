@@ -42,6 +42,7 @@ public class App {
         teclado = new Scanner(System.in);
 
         do { 
+            teclado = new Scanner(System.in);
             System.out.println("(1 - Sumar)");
             System.out.println("(2 - Restar)");
             System.out.println("(3 - Multiplicar)");
@@ -53,7 +54,7 @@ public class App {
 
             switch(opcion){
                 case "1":
-                    teclado= new Scanner (System.in);
+                    teclado = new Scanner (System.in);
                     System.out.println("Introduce el numero");
                     num1 = teclado.nextInt();
                     num2 = teclado.nextInt();
@@ -82,11 +83,7 @@ public class App {
                     num1 = teclado.nextInt();
                     num2 = teclado.nextInt();
                     System.out.println("el resultado es: "+(num1/num2));
-                    break;
-
-
-
-                    
+                    break;                
             }
 
         } while(!opcion.equals("5"));
