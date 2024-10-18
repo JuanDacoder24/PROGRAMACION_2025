@@ -47,43 +47,44 @@ public class App {
         System.out.println("Ingresar numeros");
         for (int i = 0; i < 10; i++) {
             System.out.print("Número " + (i + 1) + ": ");
-            numeros1[i] = teclado1.nextInt();
+            numeros2[i] = teclado2.nextInt();
         }
 
         int max = Integer.MAX_VALUE;
         int min = Integer.MIN_VALUE;
-//falta terminar//
-        for (int i = 0; i <= min; i++) {
-            if(min < i)
 
-            System.out.println("El menor es: " + min);
+        for (int i = 1; i < numeros2.length; i++) {
+            if (numeros2[i] > max) {
+                max = numeros2[i];
+            }
+            if (numeros2[i] < min) {
+                min = numeros2[i];
+            }
         }
-        for (int i = 0; i <= min; i++) {
-            if(max > i)
+        System.out.println("El mayor es: " + max);
+        System.out.println("El menor es: " + min);
 
-            System.out.println("El mayor es: " + max);
-        }
-        
 
         //actividad 4 Crea un programa que pida veinte números enteros por teclado, 
         //los almacene en un array y luego muestre por separado la suma de todos los valores positivos y negativos.
         
         Scanner teclado3 = new Scanner(System.in);
         int [] numeros3 = new int[20];
+        int sumaPositivos=0;
+        int sumaNegativos=0;
         System.out.println("Ingresar numeros");
         for (int i = 0; i < 20; i++) {
             System.out.print("Número " + (i + 1) + ": ");
             numeros3[i] = teclado3.nextInt();
+        if (numeros[i] > 0) {
+            sumaPositivos += numeros3[i];
+        } else if (numeros[i] < 0) {
+            sumaNegativos += numeros3[i];
         }
-        System.out.println("\nLos números ingresados son:");
-        for (int i = 0; i < 20; i++) {
-            System.out.println(numeros3[i]);
-        }
-        int suma1 = 0;
-        for (int numero : numeros3){
-            suma1 += numero;
-        }
-        System.out.println("La suma de positivos y negativos es: "+suma1);
+    }
+        System.out.println("La suma de positivos es: "+sumaPositivos);
+        System.out.println("La suma de negativos es: "+sumaNegativos);
+        //solucionar la 4
 
         
         //actividad 5 Crea un programa que pida veinte números reales por teclado, 
@@ -92,16 +93,23 @@ public class App {
         Scanner teclado4 = new Scanner(System.in);
         int [] numeros4 = new int[20];
         double media = 0.0;
+        int suma1 = 0;
         System.out.println("Ingresar numeros");
         for(int i = 0; i < numeros4.length; i++){
             System.out.print("Número " + (i + 1) + ": ");
             numeros4[i] = teclado4.nextInt();
-        }
-        media = media + numeros4[i];
-            System.out.println("La suma es: ");
+            suma1 = suma1 + numeros4[i];
             media = media / numeros4.length;
-            System.out.println("El numero de valores es: ");
-//falta terminar
+        }
+        System.out.println("La suma es: "+suma1);
+        System.out.println("El numero de valores es: "+media);
+
+
+        //actividad 6 Crea un programa que pida dos valores enteros N y M, luego cree un array de tamaño
+        //N, escriba M en todas sus posiciones y lo muestre por pantalla.
+
+
+
 
     }
 }
