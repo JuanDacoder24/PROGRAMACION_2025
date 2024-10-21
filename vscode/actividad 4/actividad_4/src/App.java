@@ -125,9 +125,10 @@ public class App {
         }
 
 
-        //actividad 7 
+        //actividad 7 Crea un programa que pida dos valores enteros P y Q, luego cree un array que contenga
+        //todos los valores desde P hasta Q, y lo muestre por pantalla.
 
-        Scanner = teclado6.new Scanner (System.in);
+        Scanner teclado6 = new Scanner (System.in);
         System.out.print("Ingrese el valor inicial (P): ");
         int p = teclado6.nextInt();
         System.out.print("Ingrese el valor final (Q): ");
@@ -146,9 +147,12 @@ public class App {
         }
 
 
-        //actividad 8
+        //actividad 8 Crea un programa que cree un array con 100 números reales aleatorios entre 0.0 y 1.0,
+        //utilizando Math.random(), y luego le pida al usuario un valor real R. Por último, mostrará
+        //cuántos valores del array son igual o superiores a R.
 
-        Scanner = teclado7.new Scanner(System,in);
+
+        Scanner teclado7 = new Scanner(System.in);
         double[] numeroRandom = new double[100];
         for (int i = 0; i < numeroRandom.length; i++) {
             numeroRandom[i] = Math.random();
@@ -164,9 +168,11 @@ public class App {
         System.out.println("Cantidad de valores en el array que son iguales o superiores a " + R + ": " + contador);
 
 
-        //actividad 9
+        //actividad 9 Crea un programa que cree un array de enteros de tamaño 100 y lo rellene con valores
+        //enteros aleatorios entre 1 y 10 (utiliza 1 + Math.random()*10). Luego pedirá un valor N
+        //y mostrará en qué posiciones del array aparece N.
 
-        Scanner = teclado8.new Scanner(System.in);
+        Scanner teclado8 = new Scanner(System.in);
         int [] numeroAleatorio = new int [100];
         for (int i = 0; i < numeroAleatorio.length; i++){
             numeroAleatorio [i] = (int) (1 + Math.random() * 10);
@@ -191,6 +197,95 @@ public class App {
         if (!encontrado) {
             System.out.println("El valor " + N + " no se encuentra en el array.");
         }
+
+
+        //ejercicio 10 Crea un programa para realizar cálculos relacionados con la altura (en metros) de
+        //personas. Pedirá un valor N y luego almacenará en un array N alturas introducidas por
+        //teclado. Luego mostrará la altura media, máxima y mínima, así como cuántas personas
+        //miden por encima y por debajo de la media.
+
+        System.out.print("Introduce el número de personas: ");
+        Scanner teclado9 = new Scanner(System.in);
+        int n1 = teclado9. nextInt();
+        int [] miArray = new int[n1];
+        double[] alturas = new double[n];
+
+        for (int i = 0; i < n; i++) {
+            System.out.print("Introduce la altura de la persona " + (i + 1) + " (en metros): ");
+            alturas[n1] = teclado9.nextDouble();
+        }
+        double suma2 = 0.0;
+        for (double altura : alturas) {
+            suma2 += altura;
+        }
+        double alturaMedia = suma2 / n;
+        double alturaMaxima = alturas[0];
+        double alturaMinima = alturas[0];
+        for (double altura : alturas) {
+            if (altura > alturaMaxima) {
+                alturaMaxima = altura;
+            }
+            if (altura < alturaMinima) {
+                alturaMinima = altura;
+            }
+        }
+
+        int porEncima = 0;
+        int porDebajo = 0;
+        for (double altura : alturas) {
+            if (altura > alturaMedia) {
+                porEncima++;
+            } else if (altura < alturaMedia) {
+                porDebajo++;
+            }
+        }
+        System.out.println("Altura media: " + alturaMedia + " metros");
+        System.out.println("Altura máxima: " + alturaMaxima + " metros");
+        System.out.println("Altura mínima: " + alturaMinima + " metros");
+        System.out.println("Personas por encima de la media: " + porEncima);
+        System.out.println("Personas por debajo de la media: " + porDebajo);
+
+
+        //actividad 11 Crea un programa que cree dos arrays de enteros de tamaño 100. Luego introducirá en
+        //el primer array todos los valores del 1 al 100. Por último, deberá copiar todos los valores
+        //del primer array al segundo array en orden inverso, y mostrar ambos por pantalla.
+
+        int [] v1 = new int[100];
+        int [] v2 = new int[100];
+        for (int i = 0; i < v1.length ; i++) {
+            v1[i] = i + 1 ;
+            System.out.println(v1[i]);
+        }
+        for (int i = 0; i < v2.length ; i++) {
+            v2[i] = v1[v1.length-1-i];
+            System.out.println(v2[i]);
+        }
+
+
+        //actividad 12
+
+        String opcion = "";
+        Scanner teclado10 = new Scanner(System.in);
+        int [] array2 = new int[10];
+        do { 
+            teclado10 = new Scanner(System.in);
+            System.out.println(" a - Mostrar valores");
+            System.out.println(" b - introducir valor");
+            System.out.println(" c - Salir");
+        
+        switch(opcion) {
+            case "a":
+            for (int i = 0; i < 10; i++) {
+                array2 [i] = i + 1;
+            }
+
+                
+                break;
+            default:
+                
+        }
+        } while (!opcion.equals("c"));
+
 
 
     }
