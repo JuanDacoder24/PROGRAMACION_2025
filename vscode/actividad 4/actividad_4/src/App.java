@@ -275,18 +275,63 @@ public class App {
         
         switch(opcion) {
             case "a":
-            for (int i = 0; i < 10; i++) {
+            for (int i = 0; i < array2.length; i++) {
                 array2 [i] = i + 1;
+                System.out.println("Posicion" + i + ":" +array2[i]+ "\n");
             }
-
-                
                 break;
-            default:
+            
+            case "b":
+            System.out.print("Introduzca una posición (0-9): ");
+            int posicion = teclado10.nextInt();
+            if (posicion >= 0 && posicion < array.length){
+                array[posicion] = valor;
+            }else {
+                System.out.println("Posicion valida");
+            }
+            break;
+            case "c":
+            System.out.println("Saliendo del programa");
                 
         }
         } while (!opcion.equals("c"));
 
 
+        //actividad 13
 
+        int[] secuencia = new int[N];
+        Scanner teclado11 = new Scanner (System.in);
+        System.out.print("Introduzca el valor inicial: ");
+        int V = teclado11.nextInt();
+        System.out.print("Introduzca el incremento: ");
+        int I = teclado11.nextInt();
+        System.out.print("Introduzca el número de valores a crear: ");
+        int N = teclado11.nextInt();
+        for (int i = 0; i < N; i++) {
+            secuencia[i] = V + i * I;
+        }
+        System.out.println("La secuencia aritmética es:");
+        for (int num : secuencia) {
+            System.out.print(num + " ");
+        }
+
+
+        //actividad 14
+
+        int ene = 55;
+        int[] array3 = new int[N];
+        int index = 0;
+
+        for (int i = 1; i <= 10; i++) {
+            for (int j = 0; j < i; j++) {
+                array3[index] = i;
+                index++;
+            }
+        }
+
+        System.out.println("La secuencia es:");
+        for (int num : array3) {
+            System.out.print(num + " ");
+        }
     }
 }
