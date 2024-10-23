@@ -28,6 +28,13 @@ public class App {
         Boolean verdadero;
         if (texto1.equals(texto2)){
             System.out.println("Las palabras son iguales");
+        }else {
+            System.out.println("Las palabras NO son exactamente iguales.");
+        }
+        if (texto1.equalsIgnoreCase(texto2)) {
+            System.out.println("Las palabras son iguales (sin diferenciar mayúsculas y minúsculas).");
+        } else {
+            System.out.println("Las palabras NO son iguales (sin diferenciar mayúsculas y minúsculas).");
         }
         
 
@@ -57,20 +64,41 @@ public class App {
 
         Scanner teclado3 = new Scanner (System.in);
         System.out.println("Introduce una frase: ");
-        String frase = teclado3.nextLine();
-        String [] division = frase.toCharArray();
-        int contador;
-        String A;
-        String E;
-        String I;
-        String O;
-        String U;
-        System.out.println("Nº de A's: ");
-        System.out.println("Nº de E's: ");
-        System.out.println("Nº de I's: ");
-        System.out.println("Nº de O's: ");
-        System.out.println("Nº de U's: ");
-        //terminar
+        String frase = teclado3.nextLine().toLowerCase();
+        int contadorA = 0;
+        int contadorE = 0;
+        int contadorI = 0;
+        int contadorO = 0;
+        int contadorU = 0;
+        for (int i = 0; i < frase.length(); i++) {
+            char c = frase.charAt(i);
+            switch (c) {
+                case 'a':
+                contadorA++;
+                    break;
+                case 'e':
+                contadorE++;
+                    break;
+                case 'i':
+                contadorI++;
+                    break;
+                case 'o':
+                contadorO++;
+                    break;
+                case 'u':
+                contadorU++;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        System.out.println("Número de 'a': " + contadorA);
+        System.out.println("Número de 'e': " + contadorE);
+        System.out.println("Número de 'i': " + contadorI);
+        System.out.println("Número de 'o': " + contadorO);
+        System.out.println("Número de 'u': " + contadorU);
+
 
 
         /*actividad 5 Realiza un programa que lea una frase por teclado e indique si la frase es un palíndromo
@@ -81,6 +109,22 @@ public class App {
 
         Scanner teclado4 = new Scanner(System.in);
         System.out.println("Colocar una frase: ");
+        String frase1 = teclado4.nextLine();
+        String fraseModificada = frase1.toLowerCase().replace(" ", "");
+        boolean esPalindromo = true;
+        int longitud = fraseModificada.length();
+        for (int i = 0; i < longitud / 2; i++) {
+            if (fraseModificada.charAt(i) != fraseModificada.charAt(longitud - 1 - i)) {
+                esPalindromo = false;
+                break;
+            }
+        }
+
+        if (esPalindromo) {
+            System.out.println("La frase es un palíndromo.");
+        } else {
+            System.out.println("La frase NO es un palíndromo.");
+        }
 
 
         
