@@ -10,28 +10,50 @@ public class App {
         System.out.println("En que consiste:\n El juego de Piedra, Papel o Tijera es un clásico juego de estrategia y azar que se juega con\n las manos. Consiste en elegir uno de tres elementos: piedra, papel o tijera, y compararlos para determinar quién gana.");
 
         String opcion = "";
-        String opcionUsuario = Scanner.nexLine();
-        String opcionComputadora = random.nexLine(P,L,T);
-
+        String opcionUsuario = teclado.nextLine();
+        int opcionComputadora = random.nextInt();
         do{
-            teclado = Scanner(System.in);
-            System.out.println("Escoje");
+            teclado =  new Scanner(System.in);
             System.out.println("P - Piedra");
             System.out.println("L - Papel");
             System.out.println("T - Tijera");
             System.out.println("S - Salir");
             String [] opciones = {"Piedra, Papel, Tijera"};
+            int P = 0;
+            int L = 1;
+            int T = 2;
+
 
             switch (opcion) {
                 case "P":
-                teclado = Scanner(System.in);
-                if (opcionUsuario.equals(P)>opcionComputadora){
+                if (opcionUsuario.equals(P)>opcionComputadora(random.nextInt())){
                     System.out.println("Haz ganado");
                 }else{
                     System.out.println("Haz perdido");
                 }
-                    break;
-            
+                if (opcionUsuario.equals(P)==opcionComputadora(random.nextInt())){
+                    System.out.println("Empate");
+                }
+
+                case "L":
+                if (opcionUsuario.equals(L)>opcionComputadora(random.nextInt())){
+                    System.out.println("Haz ganado");
+                }else{
+                    System.out.println("Haz perdido");
+                }
+                if (opcionUsuario.equals(L)==opcionComputadora(random.nextInt())){
+                    System.out.println("Empate");
+                }
+
+                case "T":
+                if (opcionUsuario.equals(T)>opcionComputadora(random.nextInt())){
+                    System.out.println("Haz ganado");
+                }else{
+                    System.out.println("Haz perdido");
+                }
+                if (opcionUsuario.equals(T)==opcionComputadora(random.nextInt())){
+                    System.out.println("Empate");
+                }
                 default:
                     break;
             }
