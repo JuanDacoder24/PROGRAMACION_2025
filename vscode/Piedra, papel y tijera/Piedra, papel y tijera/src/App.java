@@ -12,8 +12,7 @@ public class App {
         System.out.println("En que consiste:\n El juego de Piedra, Papel o Tijera es un clásico juego de estrategia y azar que se juega con\n las manos. Consiste en elegir uno de tres elementos: piedra, papel o tijera, y compararlos para determinar quién gana.");
         
         String opcion = "";
-        String opcionUsuario = teclado.nextLine();
-        int opcionComputadora = random.nextInt();
+      
         do{
             teclado =  new Scanner(System.in);
             System.out.println("Escoge una opcion");
@@ -26,6 +25,7 @@ public class App {
             int P = 1;
             int L = 2;
             int T = 3;
+            int S = 4;
             switch (opcionUsuario) {
                 case "P":
                 System.out.println("Elegiste: Piedra");
@@ -62,8 +62,9 @@ public class App {
                     System.out.println("¡Ganaste!");
                 }
                 break;
-                default:
-                    break;
+                case "S":
+                System.out.println("Gracias por jugar");
+                
             }
 
 
