@@ -6,54 +6,66 @@ public class App {
 
         Scanner teclado = new Scanner(System.in);
         Random random = new Random();
+        String [] opciones = {"Piedra, Papel, Tijera"};
+        String continuar;
         System.out.println("****Bienvenido al juego: Piedra, papel o tijera****");
         System.out.println("En que consiste:\n El juego de Piedra, Papel o Tijera es un clásico juego de estrategia y azar que se juega con\n las manos. Consiste en elegir uno de tres elementos: piedra, papel o tijera, y compararlos para determinar quién gana.");
+<<<<<<< HEAD
         
         String opcion = "";
         String opcionUsuario = teclado.nextLine();
         int opcionComputadora = random.nextInt();
+=======
+        String opcion = "";       
+>>>>>>> 8e1f6255489ad570067d3867ae2662efbe15514a
         do{
             teclado =  new Scanner(System.in);
+            System.out.println("Escoge una opcion");
             System.out.println("P - Piedra");
             System.out.println("L - Papel");
             System.out.println("T - Tijera");
             System.out.println("S - Salir");
-            String [] opciones = {"Piedra, Papel, Tijera"};
-            int P = 0;
-            int L = 1;
-            int T = 2;
-
-
-            switch (opcion) {
+            String opcionUsuario = teclado.nextLine();
+            int opcionComputadora = random.nextInt(3)+1;
+            int P = 1;
+            int L = 2;
+            int T = 3;
+            switch (opcionUsuario) {
                 case "P":
-                if (opcionUsuario.equals(P)>opcionComputadora(random.nextInt())){
-                    System.out.println("Haz ganado");
-                }else{
-                    System.out.println("Haz perdido");
+                System.out.println("Elegiste: Piedra");
+                System.out.println("La computadora eligió: " + (opcionComputadora == P ? "Piedra" : (opcionComputadora == L ? "Papel" : "Tijera")));
+                if (opcionComputadora == P) {
+                    System.out.println("¡Es un empate!");
+                } else if (opcionComputadora == L) {
+                    System.out.println("¡Perdiste!");
+                } else {
+                    System.out.println("¡Ganaste!");
                 }
-                if (opcionUsuario.equals(P)==opcionComputadora(random.nextInt())){
-                    System.out.println("Empate");
-                }
+                break; 
 
                 case "L":
-                if (opcionUsuario.equals(L)>opcionComputadora(random.nextInt())){
-                    System.out.println("Haz ganado");
-                }else{
-                    System.out.println("Haz perdido");
+                System.out.println("Elegiste: Papel");
+                System.out.println("La computadora eligió: " + (opcionComputadora == P ? "Piedra" : (opcionComputadora == L ? "Papel" : "Tijera")));
+                if (opcionComputadora == L) {
+                    System.out.println("¡Es un empate!");
+                } else if (opcionComputadora == T) {
+                    System.out.println("¡Perdiste!");
+                } else {
+                    System.out.println("¡Ganaste!");
                 }
-                if (opcionUsuario.equals(L)==opcionComputadora(random.nextInt())){
-                    System.out.println("Empate");
-                }
+                break;
 
                 case "T":
-                if (opcionUsuario.equals(T)>opcionComputadora(random.nextInt())){
-                    System.out.println("Haz ganado");
-                }else{
-                    System.out.println("Haz perdido");
+                System.out.println("Elegiste: Tijera");
+                System.out.println("La computadora eligió: " + (opcionComputadora == P ? "Piedra" : (opcionComputadora == L ? "Papel" : "Tijera")));
+                if (opcionComputadora == T) {
+                    System.out.println("¡Es un empate!");
+                } else if (opcionComputadora == P) {
+                    System.out.println("¡Perdiste!");
+                } else {
+                    System.out.println("¡Ganaste!");
                 }
-                if (opcionUsuario.equals(T)==opcionComputadora(random.nextInt())){
-                    System.out.println("Empate");
-                }
+                break;
                 default:
                     break;
             }
