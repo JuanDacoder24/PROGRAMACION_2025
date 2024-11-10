@@ -7,10 +7,9 @@ public class App {
         Scanner teclado = new Scanner(System.in);
         Random random = new Random();
         String [] opciones = {"Piedra, Papel, Tijera"};
-        String continuar;
         System.out.println("****Bienvenido al juego: Piedra, papel o tijera****");
         System.out.println("En que consiste:\n El juego de Piedra, Papel o Tijera es un clásico juego de estrategia y azar que se juega con\n las manos. Consiste en elegir uno de tres elementos: piedra, papel o tijera, y compararlos para determinar quién gana.");
-        
+        String opcionUsuario;
         String opcion = "";
       
         do{
@@ -20,7 +19,7 @@ public class App {
             System.out.println("L - Papel");
             System.out.println("T - Tijera");
             System.out.println("S - Salir");
-            String opcionUsuario = teclado.nextLine();
+            opcionUsuario = teclado.nextLine();
             int opcionComputadora = random.nextInt(3)+1;
             int P = 1;
             int L = 2;
@@ -63,14 +62,11 @@ public class App {
                 }
                 break;
                 case "S":
-                System.out.println("Gracias por jugar");
+                System.out.println("Gracias por jugar, hasta pronto");
                 
             }
 
-
-
-
-        }while(!opcion.equals("S"));
+        }while(!opcionUsuario.equals("S"));
         
         
 
