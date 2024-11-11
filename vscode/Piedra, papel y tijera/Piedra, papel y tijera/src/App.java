@@ -62,13 +62,11 @@ public class App {
                     System.out.println("¡Ganaste!");
                 }
                 break;
+
                 case "S":
                 System.out.println("Gracias por jugar");
-                
+                break;
             }
-
-
-
 
         }while(!opcion.equals("S"));
         
