@@ -7,12 +7,15 @@ public class CuentaBancaria {
     private String titular;
     private double saldo;
     private Movimiento [] movimientos;
+    private String validIban;
 
-    public CuentaBancaria( String iban, String titular, double saldo){
+    public CuentaBancaria( String iban, String titular, double saldo, String validIban){
 
         this.iban = iban;
         this.titular = titular;
         this.saldo = saldo;
+        this.movimientos = new Movimiento[100];
+        this.validIban = validIban;
     }
 
     public String getIban() {
@@ -20,15 +23,7 @@ public class CuentaBancaria {
     }
 
     public void setIban(String iban) {
-        Pattern pat = Pattern.compile("[A-Z]{2}\\d[0-9]{22}$");
-        Matcher mat = pat.matcher(iban);
-        if(mat.matches() == true){
-            System.out.println("¡CORRECTO!");
-            this.iban = iban;
-        }else{
-            System.out.println("Intentelo otra vez");
-        }
-
+        this.iban = iban;
     }
 
     public String getTitular() {
@@ -44,11 +39,23 @@ public class CuentaBancaria {
     }
 
     public void setSaldo(double saldo) {
+        if(saldo >=0.0)
         this.saldo = saldo;
     }
+    
+    public String getValidIban() {
+        return validIban;
+    }
 
-    public int getMovimientos() {
-        return movimientos;
+    public void setValidIban(String validIban) {
+        Pattern pat = Pattern.compile("[A-Z]{2}\\d[0-9]{22}$");
+        Matcher mat = pat.matcher(iban);
+        this.validIban = validIban;
+        if(mat.matches()==true){
+            System.out.println("¡CORRECTO!");
+        }else{
+            System.out.println("Incorrecto, intentelo otra vez");
+        }
     }
 
 
