@@ -3,19 +3,24 @@ import java.util.regex.Pattern;
 
 public class CuentaBancaria {
 
+    private static int contador = 0;
+
     private String iban;
     private String titular;
     private double saldo;
     private Movimiento [] movimientos;
     private String validIban;
+    private int nMovimientos;
 
     public CuentaBancaria( String iban, String titular, double saldo, String validIban){
 
+        this.contador++;
         this.iban = iban;
         this.titular = titular;
         this.saldo = saldo;
         this.movimientos = new Movimiento[100];
         this.validIban = validIban;
+        this.nMovimientos = 0;
     }
 
     public String getIban() {
@@ -58,5 +63,15 @@ public class CuentaBancaria {
         }
     }
 
+    public void ingresarMovimientos(Movimiento m1){
+       if(m1 != null){
+        this.movimientos[nMovimientos] = m1;
+        this.nMovimientos++;
+       }
+    }
+
+    public void retirarMovmientos(){
+
+    }
 
 }

@@ -1,4 +1,3 @@
-
 import java.time.LocalDateTime;
 public class Movimiento {
 
@@ -44,4 +43,11 @@ public class Movimiento {
     public void setCantidad(double cantidad) {
         this.cantidad = cantidad;
     }
+
+    public String mostrarInfoMovimiento(){
+        String mostrarInfo = String.format("Movimiento - ID: %s, Fecha: %s, Tipo: %s, Cantidad: %s", 
+        this.id, this.fecha, this.tipo, this.cantidad);
+        return mostrarInfo;
+    }
+
 }
