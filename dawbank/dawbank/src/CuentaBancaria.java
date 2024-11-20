@@ -4,7 +4,6 @@ import java.util.regex.Pattern;
 public class CuentaBancaria {
 
     private static int contador = 0;
-
     private String iban;
     private String titular;
     private double saldo;
@@ -70,8 +69,10 @@ public class CuentaBancaria {
        }
     }
 
-    public void retirarMovmientos(){
-
+    public void retirarMovmientos(Movimiento m1){
+        if(m1 != null){
+            this.movimientos[nMovimientos] = m1;
+            this.nMovimientos--;
+        }
     }
-
 }

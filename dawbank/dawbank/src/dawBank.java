@@ -17,6 +17,7 @@ public class DawBank {
 
             switch (opcion) {
                 case "1":
+                System.out.println("IBAN");
                     break;
 
                 case "2":
