@@ -11,14 +11,13 @@ public class CuentaBancaria {
     private String validIban;
     private int nMovimientos;
 
-    public CuentaBancaria( String iban, String titular, double saldo, String validIban){
+    public CuentaBancaria( String iban, String titular, double saldo){
 
         this.contador++;
         this.iban = iban;
         this.titular = titular;
         this.saldo = saldo;
         this.movimientos = new Movimiento[100];
-        this.validIban = validIban;
         this.nMovimientos = 0;
     }
 

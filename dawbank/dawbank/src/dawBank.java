@@ -4,6 +4,11 @@ public class DawBank {
         System.out.println("***Bienvenido a TuBank***");
         Scanner teclado = new Scanner(System.in);
         String opcion = "";
+        System.out.println("Introduce una IBAN");
+        String iban = teclado.nextLine();
+        System.out.println("Ingresa nombre del titular");
+        String nombre = teclado.nextLine();
+        CuentaBancaria miCuenta = new CuentaBancaria(iban, nombre, 0);
         do { 
             System.out.println("1 - Datos de la cuenta");
             System.out.println("2 - IBAN");
