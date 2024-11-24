@@ -6,7 +6,7 @@ public class Movimiento {
     private String tipo;
     private double cantidad;
 
-    public Movimiento (String tipo, String cantidad){
+    public Movimiento (String tipo, double cantidad){
         this.id = id;
         this.fecha = LocalDateTime.now().toString();
         this.tipo = tipo; //ingreso o retirada
@@ -41,7 +41,11 @@ public class Movimiento {
     }
     
     public void setCantidad(double cantidad) {
-        this.cantidad = cantidad;
+        if(cantidad > 0){
+            this.cantidad = cantidad;
+        }else{
+            System.out.println("El valor de la cantidad tiene que ser positivo");
+        }
     }
 
     public String mostrarInfoMovimiento(){
