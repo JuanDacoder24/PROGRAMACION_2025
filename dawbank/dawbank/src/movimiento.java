@@ -1,12 +1,14 @@
 import java.time.LocalDateTime;
 public class Movimiento {
 
+    private static int contador = 0;
     private int id;
     private String fecha;
     private String tipo;
     private double cantidad;
 
     public Movimiento (String tipo, double cantidad){
+        this.contador++;
         this.id = id;
         this.fecha = LocalDateTime.now().toString();
         this.tipo = tipo; //ingreso o retirada
