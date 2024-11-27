@@ -1,23 +1,24 @@
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class Pelicula {
 
     private String codigo;
     private String Titulo;
-    private String genero;
-    private String fechaRegistro;
-    private String fechaBaja;
-    private String fechaAlquiler;
+    private Generos genero;
+    private LocalDate fechaRegistro;
+    private LocalDate fechaBaja;
+    private LocalDateTime fechaAlquiler;
     private boolean isAlquilada;
 
-    public Pelicula(String codigo, String titulo, String genero, String fechaRegistro, String fechaBaja,
-        String fechaAlquiler, boolean isAlquilada) {
+    public Pelicula(String codigo, String titulo, Generos genero, LocalDate fechaRegistro, LocalDate fechaBaja,
+        LocalDateTime fechaAlquiler, boolean isAlquilada) {
         this.codigo = codigo;
         Titulo = titulo;
-        this.genero = genero; //enum
-        this.fechaRegistro = fechaRegistro; //localdate
-        this.fechaBaja = fechaBaja; //localdate
-        this.fechaAlquiler = LocalDateTime.now().toString();
+        this.genero = genero;
+        this.fechaRegistro = fechaRegistro; 
+        this.fechaBaja = fechaBaja; 
+        this.fechaAlquiler = fechaAlquiler;
         this.isAlquilada = isAlquilada;
     }
 
@@ -37,35 +38,35 @@ public class Pelicula {
         Titulo = titulo;
     }
 
-    public String getGenero() {
+    public Generos getGenero() {
         return genero;
     }
 
-    public void setGenero(String genero) {
+    public void setGenero(Generos genero) {
         this.genero = genero;
     }
 
-    public String getFechaRegistro() {
+    public LocalDate getFechaRegistro() {
         return fechaRegistro;
     }
 
-    public void setFechaRegistro(String fechaRegistro) {
+    public void setFechaRegistro(LocalDate fechaRegistro) {
         this.fechaRegistro = fechaRegistro;
     }
 
-    public String getFechaBaja() {
+    public LocalDate getFechaBaja() {
         return fechaBaja;
     }
 
-    public void setFechaBaja(String fechaBaja) {
+    public void setFechaBaja(LocalDate fechaBaja) {
         this.fechaBaja = fechaBaja;
     }
 
-    public String getFechaAlquiler() {
+    public LocalDateTime getFechaAlquiler() {
         return fechaAlquiler;
     }
 
-    public void setFechaAlquiler(String fechaAlquiler) {
+    public void setFechaAlquiler(LocalDateTime fechaAlquiler) {
         this.fechaAlquiler = fechaAlquiler;
     }
 
@@ -77,5 +78,8 @@ public class Pelicula {
         this.isAlquilada = isAlquilada;
     }
 
+    public String mostrarInfoPelicula(){
+        return mostrarInfoPelicula();
+    }
     
 }

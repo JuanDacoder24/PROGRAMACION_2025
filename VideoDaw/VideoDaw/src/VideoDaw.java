@@ -3,13 +3,13 @@ public class VideoDaw {
     private String cif;
     private String direccion;
     private String fechaAlta;
-    private Pelicula [] PeliculasRegistradas;
+    private Pelicula [] peliculasRegistradas;
+    private Cliente [] clientesRegistrados;
     
-    public VideoDaw(String cif, String direccion, String fechaAlta, Pelicula[] peliculasRegistradas) {
+    public VideoDaw(String cif, String direccion, String fechaAlta) {
         this.cif = cif;
         this.direccion = direccion;
         this.fechaAlta = fechaAlta;
-        PeliculasRegistradas = peliculasRegistradas;
     }
 
     public String getCif() {
@@ -37,11 +37,34 @@ public class VideoDaw {
     }
 
     public Pelicula[] getPeliculasRegistradas() {
-        return PeliculasRegistradas;
-    }
-    
-    public void setPeliculasRegistradas(Pelicula[] peliculasRegistradas) {
-        PeliculasRegistradas = peliculasRegistradas;
+        return peliculasRegistradas;
     }
 
+    public String mostrarInfoVideoClub(){
+        return mostrarInfoVideoClub();
+    }
+
+    public String mostrarPeliculasRegistradas(){
+        return mostrarPeliculasRegistradas();
+    }
+
+    public String mostrarClientesRegistrados(){
+        return mostrarClientesRegistrados();
+    }
+
+    public String alquilarPelicula(Pelicula p, Cliente c){
+        return alquilarPelicula(p, c);
+    }
+
+    public String devolverPelicula(Pelicula p, Cliente c){
+        return devolverPelicula(p, c);
+    }
+
+    public String darBajaCliente(Cliente c){
+        return darBajaCliente(c);
+    }
+    
+    public String registrarCliente(Cliente c){
+        return registrarCliente(c);
+    }
 }

@@ -9,14 +9,14 @@ public class Cliente {
     private Pelicula [] PeliculasAlquiladas;
 
     public Cliente(String dni, String nombre, String numSocio, String direccion, String fechaNacimiento,
-            String fechaBaja, Pelicula[] peliculasAlquiladas) {
+            String fechaBaja) {
         this.dni = dni;
         this.nombre = nombre;
         this.numSocio = numSocio;
         this.direccion = direccion;
         this.fechaNacimiento = fechaNacimiento;
         this.fechaBaja = fechaBaja;
-        PeliculasAlquiladas = peliculasAlquiladas;
+
     }
 
     public String getDni() {
@@ -67,13 +67,11 @@ public class Cliente {
         this.fechaBaja = fechaBaja;
     }
 
-    public Pelicula[] getPeliculasAlquiladas() {
-        return PeliculasAlquiladas;
+    public String mostrarInfoCliente(){
+        return mostrarInfoCliente();
     }
 
-    public void setPeliculasAlquiladas(Pelicula[] peliculasAlquiladas) {
-        PeliculasAlquiladas = peliculasAlquiladas;
+    public String mostrarPeliculasAlquiladas(){
+        return mostrarPeliculasAlquiladas();
     }
-
-
 }
