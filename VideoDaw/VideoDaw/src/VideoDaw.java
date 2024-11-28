@@ -41,7 +41,9 @@ public class VideoDaw {
     }
 
     public String mostrarInfoVideoClub(){
-        return mostrarInfoVideoClub();
+        String InfoClub = String.format("Informacion de club - CIF: %s, Direccion: %s", this.cif, this.direccion);
+        return InfoClub;
+
     }
 
     public String mostrarPeliculasRegistradas(){

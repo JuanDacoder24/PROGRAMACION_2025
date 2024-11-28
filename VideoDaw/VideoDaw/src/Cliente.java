@@ -1,15 +1,16 @@
+import java.time.LocalDate;
 public class Cliente {
 
     private String dni;
     private String nombre;
     private String numSocio;
     private String direccion;
-    private String fechaNacimiento;
-    private String fechaBaja;
+    private LocalDate fechaNacimiento;
+    private LocalDate fechaBaja;
     private Pelicula [] PeliculasAlquiladas;
 
-    public Cliente(String dni, String nombre, String numSocio, String direccion, String fechaNacimiento,
-            String fechaBaja) {
+    public Cliente(String dni, String nombre, String numSocio, String direccion, LocalDate fechaNacimiento,
+            LocalDate fechaBaja) {
         this.dni = dni;
         this.nombre = nombre;
         this.numSocio = numSocio;
@@ -51,24 +52,31 @@ public class Cliente {
         this.direccion = direccion;
     }
 
-    public String getFechaNacimiento() {
+    public LocalDate getFechaNacimiento() {
         return fechaNacimiento;
     }
 
-    public void setFechaNacimiento(String fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
+    public void setFechaNacimiento(LocalDate fechaNacimiento) {
+        if (!fechaNacimiento.equals(18)) {
+            System.out.println("Eres mayor de edad");
+        }
+        else {
+        	System.out.println("Eres menor de edad");
     }
+}
 
-    public String getFechaBaja() {
+    public LocalDate getFechaBaja() {
         return fechaBaja;
     }
 
-    public void setFechaBaja(String fechaBaja) {
+    public void setFechaBaja(LocalDate fechaBaja) {
         this.fechaBaja = fechaBaja;
     }
 
     public String mostrarInfoCliente(){
-        return mostrarInfoCliente();
+        String infoCliente = String.format("Informacion del cliente - Nombre: %s, DNI: %s, NumSocio: %s, Direccion: %s, Fecha de nacimiento: %s", 
+        this.nombre, this.dni, this.numSocio, this.direccion, this.fechaNacimiento);
+        return infoCliente;
     }
 
     public String mostrarPeliculasAlquiladas(){
