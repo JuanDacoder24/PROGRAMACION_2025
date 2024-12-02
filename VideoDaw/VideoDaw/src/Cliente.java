@@ -8,16 +8,16 @@ public class Cliente {
     private LocalDate fechaNacimiento;
     private LocalDate fechaBaja;
     private Pelicula [] PeliculasAlquiladas;
+    private String validDni;
 
     public Cliente(String dni, String nombre, String numSocio, String direccion, LocalDate fechaNacimiento,
-            LocalDate fechaBaja) {
+        LocalDate fechaBaja) {
         this.dni = dni;
         this.nombre = nombre;
         this.numSocio = numSocio;
         this.direccion = direccion;
         this.fechaNacimiento = fechaNacimiento;
-        this.fechaBaja = fechaBaja;
-
+        this.PeliculasAlquiladas = new Pelicula[100];
     }
 
     public String getDni() {
@@ -57,12 +57,7 @@ public class Cliente {
     }
 
     public void setFechaNacimiento(LocalDate fechaNacimiento) {
-        if (!fechaNacimiento.equals(18)) {
-            System.out.println("Eres mayor de edad");
-        }
-        else {
-        	System.out.println("Eres menor de edad");
-    }
+        this.fechaNacimiento = fechaNacimiento;
 }
 
     public LocalDate getFechaBaja() {
@@ -81,5 +76,13 @@ public class Cliente {
 
     public String mostrarPeliculasAlquiladas(){
         return mostrarPeliculasAlquiladas();
+    }
+    
+    public String getValidDni() {
+        return validDni;
+    }
+
+    public void setValidDni(String validDni) {
+        this.validDni = validDni;
     }
 }

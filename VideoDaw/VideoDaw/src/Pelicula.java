@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 public class Pelicula {
 
     private String codigo;
-    private String Titulo;
+    private String titulo;
     private Generos genero;
     private LocalDate fechaRegistro;
     private LocalDate fechaBaja;
@@ -13,8 +13,9 @@ public class Pelicula {
 
     public Pelicula(String codigo, String titulo, Generos genero, LocalDate fechaRegistro, LocalDate fechaBaja,
         LocalDateTime fechaAlquiler, boolean isAlquilada) {
+            
         this.codigo = codigo;
-        Titulo = titulo;
+        this.titulo = titulo;
         this.genero = genero;
         this.fechaRegistro = fechaRegistro; 
         this.fechaBaja = fechaBaja; 
@@ -31,11 +32,11 @@ public class Pelicula {
     }
 
     public String getTitulo() {
-        return Titulo;
+        return titulo;
     }
 
     public void setTitulo(String titulo) {
-        Titulo = titulo;
+        this.titulo = titulo;
     }
 
     public Generos getGenero() {
@@ -79,7 +80,9 @@ public class Pelicula {
     }
 
     public String mostrarInfoPelicula(){
-        return mostrarInfoPelicula();
+        String infoPelicula = String.format("Info Pelicula - Codigo: %s, Titulo: %s, Genero; %s, Fecha de registro: %s, Fecha de baja: %s", 
+        this.codigo, this.titulo, this,genero, this.fechaRegistro, this.fechaBaja);
+        return infoPelicula;
     }
     
 }

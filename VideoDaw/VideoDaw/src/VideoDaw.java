@@ -5,11 +5,22 @@ public class VideoDaw {
     private String fechaAlta;
     private Pelicula [] peliculasRegistradas;
     private Cliente [] clientesRegistrados;
+    private String validCif;
     
+
     public VideoDaw(String cif, String direccion, String fechaAlta) {
         this.cif = cif;
         this.direccion = direccion;
         this.fechaAlta = fechaAlta;
+        this.clientesRegistrados = new Cliente[100];
+    }
+    
+    public String getValidCif() {
+        return validCif;
+    }
+
+    public void setValidCif(String validCif) {
+        this.validCif = validCif;
     }
 
     public String getCif() {
@@ -43,7 +54,6 @@ public class VideoDaw {
     public String mostrarInfoVideoClub(){
         String InfoClub = String.format("Informacion de club - CIF: %s, Direccion: %s", this.cif, this.direccion);
         return InfoClub;
-
     }
 
     public String mostrarPeliculasRegistradas(){
