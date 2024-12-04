@@ -7,6 +7,8 @@ public class GestionVideoDaw {
         Scanner teclado = new Scanner (System.in);
         System.out.println("***Bienvenido a VideoDaw***");
         String opcion = "";
+        Cliente persona = new Cliente(opcion, opcion, opcion, opcion, null, null);
+
         do { 
             teclado = new Scanner (System.in);
             System.out.println("1 - Crear y registrar VideoClub en la franquicia");
@@ -21,16 +23,35 @@ public class GestionVideoDaw {
 
             switch (opcion) {
                 case "1":
-                System.out.println("Introduce el CIF");
-                String cif = teclado.nextLine();
-                System.out.println("Introduza la direccion");
+                String cif;
+                do {
+                    System.out.println("Introduzca el CIF para el registro del VideoClub");
+                    cif = teclado.nextLine().toUpperCase();
+                    if(setValidCif(cif)){
+                        System.out.println("Correcto");
+                    }else
+                    System.out.println("Incorrecto, intentelo otra vez");
+                }while (!setValidCif(cif));
+
+                System.out.println("Introduza la direccion de su local");
                 String direccion = teclado.nextLine();
-                    
+                System.out.println(persona.getDireccion());
                     break;
                 case "2":
                     
                     break;
                 case "3":
+                String dni;
+                do {
+                    System.out.println("Primero introduzca el DNI para registrar al cliente");
+                    dni = teclado.nextLine().toUpperCase();
+                    if(setValidDni(dni)){
+                        System.out.println("Correcto");
+                    }else
+                    System.out.println("Incorrecto, intentelo otra vez");
+                }while (!setValidDni(dni));
+                System.out.println("Introduce el nombre");
+                String nombre = teclado.nextLine();
                     
                     break;
                 case "4":
@@ -58,5 +79,10 @@ public class GestionVideoDaw {
         Matcher mat = pat.matcher(dni);
         return mat.matches();
         
+    }
+    public static boolean setValidCif(String cif) {
+        Pattern pat = Pattern.compile("[A-Z]{1}[0-9]{7}[A-Z]{1}");
+        Matcher mat = pat.matcher(cif);
+        return mat.matches();
     }
 }

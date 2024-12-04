@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+
 public class Cliente {
 
     private String dni;
@@ -18,6 +19,10 @@ public class Cliente {
         this.direccion = direccion;
         this.fechaNacimiento = fechaNacimiento;
         this.PeliculasAlquiladas = new Pelicula[100];
+    }
+
+    public Cliente(Pelicula[] PeliculasAlquiladas) {
+        this.PeliculasAlquiladas = PeliculasAlquiladas;
     }
 
     public String getDni() {
@@ -85,4 +90,5 @@ public class Cliente {
     public void setValidDni(String validDni) {
         this.validDni = validDni;
     }
+    
 }

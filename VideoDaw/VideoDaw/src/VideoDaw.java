@@ -6,7 +6,6 @@ public class VideoDaw {
     private Pelicula [] peliculasRegistradas;
     private Cliente [] clientesRegistrados;
     private String validCif;
-    
 
     public VideoDaw(String cif, String direccion, String fechaAlta) {
         this.cif = cif;
@@ -79,4 +78,13 @@ public class VideoDaw {
     public String registrarCliente(Cliente c){
         return registrarCliente(c);
     }
+
+    public Cliente[] getClientesRegistrados() {
+        return clientesRegistrados;
+    }
+
+    public void setClientesRegistrados(Cliente[] clientesRegistrados) {
+        this.clientesRegistrados = clientesRegistrados;
+    }
+
 }
