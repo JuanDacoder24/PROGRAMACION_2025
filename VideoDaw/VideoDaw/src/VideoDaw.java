@@ -1,53 +1,32 @@
+
+import java.time.LocalDate;
+
 public class VideoDaw {
 
     private String cif;
     private String direccion;
-    private String fechaAlta;
+    private LocalDate fechaAlta;
+
     private Pelicula [] peliculasRegistradas;
     private Cliente [] clientesRegistrados;
-    private String validCif;
 
-    public VideoDaw(String cif, String direccion, String fechaAlta) {
+    public VideoDaw(String cif, String direccion, LocalDate fechaAlta) {
         this.cif = cif;
         this.direccion = direccion;
         this.fechaAlta = fechaAlta;
         this.clientesRegistrados = new Cliente[100];
-    }
-    
-    public String getValidCif() {
-        return validCif;
-    }
-
-    public void setValidCif(String validCif) {
-        this.validCif = validCif;
     }
 
     public String getCif() {
         return cif;
     }
 
-    public void setCif(String cif) {
-        this.cif = cif;
-    }
-
     public String getDireccion() {
         return direccion;
     }
 
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
-    }
-
-    public String getFechaAlta() {
+    public LocalDate getFechaAlta() {
         return fechaAlta;
-    }
-
-    public void setFechaAlta(String fechaAlta) {
-        this.fechaAlta = fechaAlta;
-    }
-
-    public Pelicula[] getPeliculasRegistradas() {
-        return peliculasRegistradas;
     }
 
     public String mostrarInfoVideoClub(){
@@ -55,12 +34,16 @@ public class VideoDaw {
         return InfoClub;
     }
 
-    public String mostrarPeliculasRegistradas(){
-        return mostrarPeliculasRegistradas();
+    public void mostrarPeliculasRegistradas(){
+        for (Pelicula peliculasRegistrada : peliculasRegistradas) {
+            System.out.println(peliculasRegistrada);
+        }
     }
 
-    public String mostrarClientesRegistrados(){
-        return mostrarClientesRegistrados();
+    public void mostrarClientesRegistrados(){
+        for (Cliente clientesRegistrado : clientesRegistrados) {
+            System.out.println(clientesRegistrado);   
+        }
     }
 
     public String alquilarPelicula(Pelicula p, Cliente c){
@@ -77,14 +60,6 @@ public class VideoDaw {
     
     public String registrarCliente(Cliente c){
         return registrarCliente(c);
-    }
-
-    public Cliente[] getClientesRegistrados() {
-        return clientesRegistrados;
-    }
-
-    public void setClientesRegistrados(Cliente[] clientesRegistrados) {
-        this.clientesRegistrados = clientesRegistrados;
     }
 
 }

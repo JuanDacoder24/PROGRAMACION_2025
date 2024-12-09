@@ -6,8 +6,7 @@ public class GestionVideoDaw {
         
         Scanner teclado = new Scanner (System.in);
         System.out.println("***Bienvenido a VideoDaw***");
-        String opcion = "";
-        Cliente persona = new Cliente(opcion, opcion, opcion, opcion, null, null);
+        String opcion = " ";
 
         do { 
             teclado = new Scanner (System.in);
@@ -35,7 +34,7 @@ public class GestionVideoDaw {
 
                 System.out.println("Introduza la direccion de su local");
                 String direccion = teclado.nextLine();
-                System.out.println(persona.getDireccion());
+                System.out.println(direccion + " Introducida correctamente");
                     break;
                 case "2":
                     
@@ -50,8 +49,9 @@ public class GestionVideoDaw {
                     }else
                     System.out.println("Incorrecto, intentelo otra vez");
                 }while (!setValidDni(dni));
-                System.out.println("Introduce el nombre");
-                String nombre = teclado.nextLine();
+                System.out.println("Introduzca el nombre");
+                String cliente = teclado.nextLine();
+                System.out.println(cliente + " Introducido correctamente");
                     
                     break;
                 case "4":
